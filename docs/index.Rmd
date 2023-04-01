@@ -16,7 +16,9 @@ knitr::opts_chunk$set(echo = TRUE, fig.width=15, fig.height=10)
 ```
 # **1. Table of Contents**
 |
-| This document implements simulated annealing and genetic algorithms for selecting informative predictors using various helpful packages in <mark style="background-color: #CCECFF">**R**</mark>.    
+| This document implements simulated annealing and genetic algorithms for selecting informative predictors using various helpful packages in <mark style="background-color: #CCECFF">**R**</mark>.  
+|
+| Feature selection is the process of reducing the number of input variables by eliminating redundant or irrelevant features and narrowing down the set of features to those most relevant to the machine learning model, resulting to simpler explainable models, shorter training times due to a more precise subset of features, reduction of variance, increase in precision estimates and avoidance against the curse of high dimensionality. The algorithms applied in this study (mostly contained in the <mark style="background-color: #CCECFF">**caret**</mark> package) are wrapper feature selection methods which attempt to consider the selection of a set of features as a search problem, whereby their quality is assessed with the preparation, evaluation, and comparison of a combination of features to other combinations of features. 
 |
 ##  1.1 Sample Data
 |
