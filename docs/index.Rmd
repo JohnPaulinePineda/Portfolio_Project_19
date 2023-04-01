@@ -1062,6 +1062,8 @@ RF_SA_Test
 
 ###  1.5.3 Random Forest With Genetic Algorithms (RF_GA)
 |
+| [Genetic Algorithms](http://mitpress.mit.edu/9780262133166/) mimic Darwinian forces of natural selection to find optimal values of some function. An initial set of candidate solutions are created and their corresponding fitness values are calculated (where larger values are better). This set of solutions is referred to as a population and each solution as an individual. The individuals with the best fitness values are combined randomly to produce offsprings which make up the next population. To do so, individual are selected and undergo cross-over (mimicking genetic reproduction) and also are subject to random mutations. This process is repeated again and again and many generations are produced resulting to iterations of the search procedure that should create better and better solutions. For feature selection, the individuals are subsets of predictors that are encoded as binary representing a feature being either included or not in the subset. The fitness values applied are existing measurea of model performance.
+|
 | **[A]** The random forest model from the  <mark style="background-color: #CCECFF">**randomForest**</mark> package was implemented with genetic algorithms through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
 | **[B]** The model contains 1 hyperparameter:
@@ -1336,6 +1338,8 @@ LDA_SA_Test
 
 ###  1.5.6 Linear Discriminant Analysis With Genetic Algorithms (LDA_GA)
 |
+| [Genetic Algorithms](http://mitpress.mit.edu/9780262133166/) mimic Darwinian forces of natural selection to find optimal values of some function. An initial set of candidate solutions are created and their corresponding fitness values are calculated (where larger values are better). This set of solutions is referred to as a population and each solution as an individual. The individuals with the best fitness values are combined randomly to produce offsprings which make up the next population. To do so, individual are selected and undergo cross-over (mimicking genetic reproduction) and also are subject to random mutations. This process is repeated again and again and many generations are produced resulting to iterations of the search procedure that should create better and better solutions. For feature selection, the individuals are subsets of predictors that are encoded as binary representing a feature being either included or not in the subset. The fitness values applied are existing measurea of model performance.
+|
 | **[A]** The linear discriminant analysis model from the  <mark style="background-color: #CCECFF">**MASS**</mark> package was implemented with genetic algorithms through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
 | **[B]** The model does not contain any hyperparameter.
@@ -1562,6 +1566,8 @@ print(Accuracy_Summary, row.names=FALSE)
 | **[Publication]** [Optimization by Simulated Annealing](https://www.sciencedirect.com/science/article/pii/B9780080515816500593) by S Kirkpatrick, C Gelatt and M Vecchi (Science)
 | **[Publication]** [Simulated Annealing Algorithms: An Overview](https://ieeexplore.ieee.org/document/17235) by R Rutenbar (IEEE Circuits and Devices Magazine)
 | **[Publication]** [An Introduction to Genetic Algorithms](http://mitpress.mit.edu/9780262133166/) by Melanie Mitchell (Complex Adaptive Systems)
+| **[Publication]** [An Introduction to Genetic Algorithms](http://mitpress.mit.edu/9780262133166/) by Melanie Mitchell (Complex Adaptive Systems)
+| **[Publication]** [Bagging Predictors ](https://link.springer.com/content/pdf/10.1007/BF00058655.pdf) by Leo Breiman (Machine Learning)
 | **[Course]** [Applied Data Mining and Statistical Learning](https://online.stat.psu.edu/stat508/) by Penn State Eberly College of Science
 | **[Course]** [Regression Methods](https://online.stat.psu.edu/stat501/) by Penn State Eberly College of Science
 | **[Course]** [Applied Regression Analysis](https://online.stat.psu.edu/stat462/) by Penn State Eberly College of Science
