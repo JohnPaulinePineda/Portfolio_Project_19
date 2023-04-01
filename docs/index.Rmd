@@ -857,7 +857,7 @@ EDA.Bar.Source.FactorVar.Prop <- rbind(EDA.PropTable.Function("E2"),
 
 ###  1.5.1 Random Forest Without SA and GA (RF_FULL)
 |
-| [Random Forest](https://link.springer.com/content/pdf/10.1007/BF00058655.pdf) is an ensemble learning method made up of a large set of small decision trees, called estimators, which each produce their own predictions. The random forest model aggregates the predictions of the estimators to produce a more accurate prediction. The algorithm involves bootstrap aggregating (where smaller subsets of the training data are repeatedly subsampled with replacement), random subspacing (where a subset of features are sampled and used to train each individual estimator), estimator training (where unpruned decision trees are formulated for each estimator) and inference by aggregating the predictions of all estimators
+| [Random Forest](https://link.springer.com/content/pdf/10.1007/BF00058655.pdf) is an ensemble learning method made up of a large set of small decision trees, called estimators, which each produce their own predictions. The random forest model aggregates the predictions of the estimators to produce a more accurate prediction. The algorithm involves bootstrap aggregating (where smaller subsets of the training data are repeatedly subsampled with replacement), random subspacing (where a subset of features are sampled and used to train each individual estimator), estimator training (where unpruned decision trees are formulated for each estimator) and inference by aggregating the predictions of all estimators.
 |
 | **[A]** The random forest model from the  <mark style="background-color: #CCECFF">**randomForest**</mark> package was implemented without simulated annealing and genetic algorithms through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
@@ -1146,6 +1146,8 @@ RF_GA_Test
 
 ###  1.5.4 Linear Discriminant Analysis Without SA and GA (LDA_FULL)
 |
+| [Linear Discriminant Analysis](https://www.semanticscholar.org/paper/THE-USE-OF-MULTIPLE-MEASUREMENTS-IN-TAXONOMIC-Fisher/ab21376e43ac90a4eafd14f0f02a0c87502b6bbf) finds a linear combination of features that best separates the classes in a data set by projecting the data onto a lower-dimensional space that maximizes the separation between the classes. The algorithm searches for a set of linear discriminants that maximize the ratio of between-class variance to within-class variance by evaluating directions in the feature space that best separate the different classes of data. LDA assumes that the data has a Gaussian distribution and that the covariance matrices of the different classes are equal, in addition to the data being linearly separable by the presence of a linear decision boundary can accurately classify the different classes.
+|
 | **[A]** The linear discriminant analysis model from the  <mark style="background-color: #CCECFF">**MASS**</mark> package was implemented without simulated annealing and genetic algorithms through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
 | **[B]** The model does not contain any hyperparameter.
@@ -1249,6 +1251,7 @@ LDA_FULL_Test
 
 ###  1.5.5 Linear Discriminant Analysis With Simulated Annealing (LDA_SA)
 |
+| [Linear Discriminant Analysis](https://www.semanticscholar.org/paper/THE-USE-OF-MULTIPLE-MEASUREMENTS-IN-TAXONOMIC-Fisher/ab21376e43ac90a4eafd14f0f02a0c87502b6bbf) finds a linear combination of features that best separates the classes in a data set by projecting the data onto a lower-dimensional space that maximizes the separation between the classes. The algorithm searches for a set of linear discriminants that maximize the ratio of between-class variance to within-class variance by evaluating directions in the feature space that best separate the different classes of data. LDA assumes that the data has a Gaussian distribution and that the covariance matrices of the different classes are equal, in addition to the data being linearly separable by the presence of a linear decision boundary can accurately classify the different classes.
 | [Simulated Annealing](https://www.sciencedirect.com/science/article/pii/B9780080515816500593) is a global search method that makes small random changes or perturbations to an initial candidate solution. If the performance value for the perturbed value is better than the previous solution, the new solution is accepted. If not, an acceptance probability is determined based on the difference between the two performance values and the current iteration of the search. From this, a sub-optimal solution can be accepted on the off-change that it may eventually produce a better solution in subsequent iterations. In the context of feature selection, a solution is a binary vector that describes the current subset. The subset is perturbed by randomly changing a small number of members in the subset.
 |
 | **[A]** The linear discriminant analysis model from the  <mark style="background-color: #CCECFF">**MASS**</mark> package was implemented with simulated annealing through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
@@ -1344,6 +1347,7 @@ LDA_SA_Test
 
 ###  1.5.6 Linear Discriminant Analysis With Genetic Algorithms (LDA_GA)
 |
+| [Linear Discriminant Analysis](https://www.semanticscholar.org/paper/THE-USE-OF-MULTIPLE-MEASUREMENTS-IN-TAXONOMIC-Fisher/ab21376e43ac90a4eafd14f0f02a0c87502b6bbf) finds a linear combination of features that best separates the classes in a data set by projecting the data onto a lower-dimensional space that maximizes the separation between the classes. The algorithm searches for a set of linear discriminants that maximize the ratio of between-class variance to within-class variance by evaluating directions in the feature space that best separate the different classes of data. LDA assumes that the data has a Gaussian distribution and that the covariance matrices of the different classes are equal, in addition to the data being linearly separable by the presence of a linear decision boundary can accurately classify the different classes.
 | [Genetic Algorithms](http://mitpress.mit.edu/9780262133166/) mimic Darwinian forces of natural selection to find optimal values of some function. An initial set of candidate solutions are created and their corresponding fitness values are calculated (where larger values are better). This set of solutions is referred to as a population and each solution as an individual. The individuals with the best fitness values are combined randomly to produce offsprings which make up the next population. To do so, individual are selected and undergo cross-over (mimicking genetic reproduction) and also are subject to random mutations. This process is repeated again and again and many generations are produced resulting to iterations of the search procedure that should create better and better solutions. For feature selection, the individuals are subsets of predictors that are encoded as binary representing a feature being either included or not in the subset. The fitness values applied are existing measurea of model performance.
 |
 | **[A]** The linear discriminant analysis model from the  <mark style="background-color: #CCECFF">**MASS**</mark> package was implemented with genetic algorithms through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
@@ -1568,12 +1572,17 @@ print(Accuracy_Summary, row.names=FALSE)
 | **[Article]** [Linear Discriminant Analysis, Explained](https://yangxiaozhou.github.io/data/2019/10/02/linear-discriminant-analysis.html) by Xiaozhou Yang
 | **[Article]** [Classification Tree](https://support.bccvl.org.au/support/solutions/articles/6000083204-classification-tree) by BCCVL Team
 | **[Article]** [Random Forest](https://support.bccvl.org.au/support/solutions/articles/6000083217-random-forest) by BCCVL Team
+| **[Article]** [What is a Random Forest?](https://deepai.org/machine-learning-glossary-and-terms/random-forest) by Thomas Wood
+| **[Article]** [Random Forest Algorithm - How It Works & Why It’s So Effective](https://www.turing.com/kb/random-forest-algorithm) by Turing Team
 | **[Article]** [Generalized Linear Model](https://support.bccvl.org.au/support/solutions/articles/6000083213-generalized-linear-model) by BCCVL Team
+| **[Article]** [Linear Discriminant Analysis for Machine Learning](https://machinelearningmastery.com/linear-discriminant-analysis-for-machine-learning/) by Jason Brownlee
+| **[Article]** [An Illustrative Introduction to Fisher’s Linear Discriminant](https://www.freecodecamp.org/news/an-illustrative-introduction-to-fishers-linear-discriminant-9484efee15ac/) by Free Code Camp Team
+| **[Article]** [ML | Linear Discriminant Analysis](https://www.geeksforgeeks.org/ml-linear-discriminant-analysis/) by Geeks For Geeks Team
 | **[Publication]** [Optimization by Simulated Annealing](https://www.sciencedirect.com/science/article/pii/B9780080515816500593) by S Kirkpatrick, C Gelatt and M Vecchi (Science)
 | **[Publication]** [Simulated Annealing Algorithms: An Overview](https://ieeexplore.ieee.org/document/17235) by R Rutenbar (IEEE Circuits and Devices Magazine)
 | **[Publication]** [An Introduction to Genetic Algorithms](http://mitpress.mit.edu/9780262133166/) by Melanie Mitchell (Complex Adaptive Systems)
 | **[Publication]** [Bagging Predictors ](https://link.springer.com/content/pdf/10.1007/BF00058655.pdf) by Leo Breiman (Machine Learning)
-| **[Publication]** [An Introduction to Genetic Algorithms](http://mitpress.mit.edu/9780262133166/) by Melanie Mitchell (Complex Adaptive Systems)
+| **[Publication]** [The Use of Multiple Measurements in Taxonomic Problems](https://www.semanticscholar.org/paper/THE-USE-OF-MULTIPLE-MEASUREMENTS-IN-TAXONOMIC-Fisher/ab21376e43ac90a4eafd14f0f02a0c87502b6bbf) by Ronald Fisher (Annals of Human Genetics)
 | **[Course]** [Applied Data Mining and Statistical Learning](https://online.stat.psu.edu/stat508/) by Penn State Eberly College of Science
 | **[Course]** [Regression Methods](https://online.stat.psu.edu/stat501/) by Penn State Eberly College of Science
 | **[Course]** [Applied Regression Analysis](https://online.stat.psu.edu/stat462/) by Penn State Eberly College of Science
