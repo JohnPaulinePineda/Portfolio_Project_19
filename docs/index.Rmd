@@ -982,6 +982,8 @@ RF_FULL_Test
 
 ###  1.5.2 Random Forest With Simulated Annealing (RF_SA)
 |
+| [Simulated Annealing](https://www.sciencedirect.com/science/article/pii/B9780080515816500593) is a global search method that makes small random changes or perturbations to an initial candidate solution. If the performance value for the perturbed value is better than the previous solution, the new solution is accepted. If not, an acceptance probability is determined based on the difference between the two performance values and the current iteration of the search. From this, a sub-optimal solution can be accepted on the off-change that it may eventually produce a better solution in subsequent iterations. In the context of feature selection, a solution is a binary vector that describes the current subset. The subset is perturbed by randomly changing a small number of members in the subset.
+|
 | **[A]** The random forest model from the  <mark style="background-color: #CCECFF">**randomForest**</mark> package was implemented with simulated annealing through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
 | **[B]** The model contains 1 hyperparameter:
@@ -1238,6 +1240,8 @@ LDA_FULL_Test
 ```
 
 ###  1.5.5 Linear Discriminant Analysis With Simulated Annealing (LDA_SA)
+|
+| [Simulated Annealing](https://www.sciencedirect.com/science/article/pii/B9780080515816500593) is a global search method that makes small random changes or perturbations to an initial candidate solution. If the performance value for the perturbed value is better than the previous solution, the new solution is accepted. If not, an acceptance probability is determined based on the difference between the two performance values and the current iteration of the search. From this, a sub-optimal solution can be accepted on the off-change that it may eventually produce a better solution in subsequent iterations. In the context of feature selection, a solution is a binary vector that describes the current subset. The subset is perturbed by randomly changing a small number of members in the subset.
 |
 | **[A]** The linear discriminant analysis model from the  <mark style="background-color: #CCECFF">**MASS**</mark> package was implemented with simulated annealing through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
