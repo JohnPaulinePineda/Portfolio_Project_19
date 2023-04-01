@@ -857,6 +857,8 @@ EDA.Bar.Source.FactorVar.Prop <- rbind(EDA.PropTable.Function("E2"),
 
 ###  1.5.1 Random Forest Without SA and GA (RF_FULL)
 |
+| [Random Forest](https://link.springer.com/content/pdf/10.1007/BF00058655.pdf) is an ensemble learning method made up of a large set of small decision trees, called estimators, which each produce their own predictions. The random forest model aggregates the predictions of the estimators to produce a more accurate prediction. The algorithm involves bootstrap aggregating (where smaller subsets of the training data are repeatedly subsampled with replacement), random subspacing (where a subset of features are sampled and used to train each individual estimator), estimator training (where unpruned decision trees are formulated for each estimator) and inference by aggregating the predictions of all estimators
+|
 | **[A]** The random forest model from the  <mark style="background-color: #CCECFF">**randomForest**</mark> package was implemented without simulated annealing and genetic algorithms through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
 | **[B]** The model contains 1 hyperparameter:
@@ -982,6 +984,8 @@ RF_FULL_Test
 
 ###  1.5.2 Random Forest With Simulated Annealing (RF_SA)
 |
+| [Random Forest](https://link.springer.com/content/pdf/10.1007/BF00058655.pdf) is an ensemble learning method made up of a large set of small decision trees, called estimators, which each produce their own predictions. The random forest model aggregates the predictions of the estimators to produce a more accurate prediction. The algorithm involves bootstrap aggregating (where smaller subsets of the training data are repeatedly subsampled with replacement), random subspacing (where a subset of features are sampled and used to train each individual estimator), estimator training (where unpruned decision trees are formulated for each estimator) and inference by aggregating the predictions of all estimators
+|
 | [Simulated Annealing](https://www.sciencedirect.com/science/article/pii/B9780080515816500593) is a global search method that makes small random changes or perturbations to an initial candidate solution. If the performance value for the perturbed value is better than the previous solution, the new solution is accepted. If not, an acceptance probability is determined based on the difference between the two performance values and the current iteration of the search. From this, a sub-optimal solution can be accepted on the off-change that it may eventually produce a better solution in subsequent iterations. In the context of feature selection, a solution is a binary vector that describes the current subset. The subset is perturbed by randomly changing a small number of members in the subset.
 |
 | **[A]** The random forest model from the  <mark style="background-color: #CCECFF">**randomForest**</mark> package was implemented with simulated annealing through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
@@ -1061,6 +1065,8 @@ RF_SA_Test
 ```
 
 ###  1.5.3 Random Forest With Genetic Algorithms (RF_GA)
+|
+| [Random Forest](https://link.springer.com/content/pdf/10.1007/BF00058655.pdf) is an ensemble learning method made up of a large set of small decision trees, called estimators, which each produce their own predictions. The random forest model aggregates the predictions of the estimators to produce a more accurate prediction. The algorithm involves bootstrap aggregating (where smaller subsets of the training data are repeatedly subsampled with replacement), random subspacing (where a subset of features are sampled and used to train each individual estimator), estimator training (where unpruned decision trees are formulated for each estimator) and inference by aggregating the predictions of all estimators
 |
 | [Genetic Algorithms](http://mitpress.mit.edu/9780262133166/) mimic Darwinian forces of natural selection to find optimal values of some function. An initial set of candidate solutions are created and their corresponding fitness values are calculated (where larger values are better). This set of solutions is referred to as a population and each solution as an individual. The individuals with the best fitness values are combined randomly to produce offsprings which make up the next population. To do so, individual are selected and undergo cross-over (mimicking genetic reproduction) and also are subject to random mutations. This process is repeated again and again and many generations are produced resulting to iterations of the search procedure that should create better and better solutions. For feature selection, the individuals are subsets of predictors that are encoded as binary representing a feature being either included or not in the subset. The fitness values applied are existing measurea of model performance.
 |
@@ -1566,8 +1572,8 @@ print(Accuracy_Summary, row.names=FALSE)
 | **[Publication]** [Optimization by Simulated Annealing](https://www.sciencedirect.com/science/article/pii/B9780080515816500593) by S Kirkpatrick, C Gelatt and M Vecchi (Science)
 | **[Publication]** [Simulated Annealing Algorithms: An Overview](https://ieeexplore.ieee.org/document/17235) by R Rutenbar (IEEE Circuits and Devices Magazine)
 | **[Publication]** [An Introduction to Genetic Algorithms](http://mitpress.mit.edu/9780262133166/) by Melanie Mitchell (Complex Adaptive Systems)
-| **[Publication]** [An Introduction to Genetic Algorithms](http://mitpress.mit.edu/9780262133166/) by Melanie Mitchell (Complex Adaptive Systems)
 | **[Publication]** [Bagging Predictors ](https://link.springer.com/content/pdf/10.1007/BF00058655.pdf) by Leo Breiman (Machine Learning)
+| **[Publication]** [An Introduction to Genetic Algorithms](http://mitpress.mit.edu/9780262133166/) by Melanie Mitchell (Complex Adaptive Systems)
 | **[Course]** [Applied Data Mining and Statistical Learning](https://online.stat.psu.edu/stat508/) by Penn State Eberly College of Science
 | **[Course]** [Regression Methods](https://online.stat.psu.edu/stat501/) by Penn State Eberly College of Science
 | **[Course]** [Applied Regression Analysis](https://online.stat.psu.edu/stat462/) by Penn State Eberly College of Science
