@@ -1556,8 +1556,8 @@ print(Accuracy_Summary, row.names=FALSE)
 | **[Article]** [Random Forest](https://support.bccvl.org.au/support/solutions/articles/6000083217-random-forest) by BCCVL Team
 | **[Article]** [Generalized Linear Model](https://support.bccvl.org.au/support/solutions/articles/6000083213-generalized-linear-model) by BCCVL Team
 | **[Publication]** [Optimization by Simulated Annealing](https://www.sciencedirect.com/science/article/pii/B9780080515816500593) by S Kirkpatrick, C Gelatt and M Vecchi (Science)
-| **[Publication]** [Generalized Linear Model](https://support.bccvl.org.au/support/solutions/articles/6000083213-generalized-linear-model) by BCCVL Team
-| **[Publication]** [Generalized Linear Model](https://support.bccvl.org.au/support/solutions/articles/6000083213-generalized-linear-model) by BCCVL Team
+| **[Publication]** [Simulated Annealing Algorithms: An Overview](https://ieeexplore.ieee.org/document/17235) by R Rutenbar (IEEE Circuits and Devices Magazine)
+| **[Publication]** [An Introduction to Genetic Algorithms](http://mitpress.mit.edu/9780262133166/) by Melanie Mitchell (Complex Adaptive Systems)
 | **[Course]** [Applied Data Mining and Statistical Learning](https://online.stat.psu.edu/stat508/) by Penn State Eberly College of Science
 | **[Course]** [Regression Methods](https://online.stat.psu.edu/stat501/) by Penn State Eberly College of Science
 | **[Course]** [Applied Regression Analysis](https://online.stat.psu.edu/stat462/) by Penn State Eberly College of Science
