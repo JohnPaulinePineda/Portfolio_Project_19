@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = TRUE, fig.width=15, fig.height=10)
 ```
 # **1. Table of Contents**
 |
-| This document implements simulated annealing and genetic algorithms for selecting informative predictors using various helpful packages in <mark style="background-color: #CCECFF">**R**</mark>.  
+| This project implements **Simulated Annealing** and **Genetic Algorithms** in selecting informative predictors for a modelling problem using the **Random Forest** and **Linear Discriminant Analysis** structures in <mark style="background-color: #CCECFF">**R**</mark>. The resulting predictions derived from the candidate models applying both **Simulated Annealing** and **Genetic Algorithms** were evaluated in terms of their discrimination power using the receiver operating characteristic (ROC) curve area under the curve (AUC) metric. The ROC AUC values were compared to those of the baseline models which made use of the full data without any form of feature selection, or implemented a model-specific feature selection process.
 |
 | Feature selection is the process of reducing the number of input variables by eliminating redundant or unimportant features and narrowing down the set of features to those most relevant to the machine learning approach, resulting to simpler explainable models, shorter training times due to a more precise subset of features, reduction of variance, increase in precision estimates and more robust solution against the curse of high dimensionality. The algorithms applied in this study (mostly contained in the <mark style="background-color: #CCECFF">**caret**</mark> package) are wrapper feature selection methods which attempt to consider the task of selecting feature subsets as a search problem, whereby their quality is assessed with the preparation, evaluation, and comparison between different feature combinations. 
 |
@@ -1446,14 +1446,14 @@ LDA_GA_Test
 | Model performance comparison:
 |
 | **[A]** The simulated annealing and genetic algorithms to select a subset of informative predictors performed better for models without an inherent variable selection feature (i.e. linear discriminant analysis as compared to random forest). 
-|      **[A.1]** RF: Random Forest (<mark style="background-color: #CCECFF">**randomForest**</mark> package)
-|             **[A.1.1]** RF_FULL: Cross-Validation Accuracy = 0.77975, Test Accuracy = 0.80303 
-|             **[A.1.2]** RF_SA: Cross-Validation Accuracy = 0.77618, Test Accuracy = 0.77272  
-|             **[A.1.3]** RF_GA: Cross-Validation Accuracy = 0.79842, Test Accuracy = 0.78787
-|      **[A.2]** LDA: Linear Discriminant Analysis (<mark style="background-color: #CCECFF">**MASS**</mark> package)
-|             **[A.2.1]** LDA_FULL: Cross-Validation Accuracy = 0.76754, Test Accuracy = 0.75757 
-|             **[A.2.2]** LDA_SA: Cross-Validation Accuracy = 0.80941, Test Accuracy = 0.81818  
-|             **[A.2.3]** LDA_GA: Cross-Validation Accuracy = 0.79402, Test Accuracy = 0.84848
+|      **[A.1]** **RF: Random Forest** (<mark style="background-color: #CCECFF">**randomForest**</mark> package)
+|             **[A.1.1]** **RF_FULL (Random Forest Without Simulated Annealing and Genetic Algorithms)**: Cross-Validation Accuracy = 0.77975, Test Accuracy = 0.80303 
+|             **[A.1.2]** **RF_SA (Random Forest With Simulated Annealing)**: Cross-Validation Accuracy = 0.77618, Test Accuracy = 0.77272  
+|             **[A.1.3]** **RF_GA (Random Forest With Genetic Algorithms)**: Cross-Validation Accuracy = 0.79842, Test Accuracy = 0.78787
+|      **[A.2]** **LDA: Linear Discriminant Analysis** (<mark style="background-color: #CCECFF">**MASS**</mark> package)
+|             **[A.2.1]** **LDA_FULL (Linear Discriminant Analysis Without Simulated Annealing and Genetic Algorithms)**: Cross-Validation Accuracy = 0.76754, Test Accuracy = 0.75757 
+|             **[A.2.2]** **LDA_SA (Linear Discriminant Analysis With Simulated Annealing)**: Cross-Validation Accuracy = 0.80941, Test Accuracy = 0.81818  
+|             **[A.2.3]** **LDA_GA (Linear Discriminant Analysis With Genetic Algorithms)**: Cross-Validation Accuracy = 0.79402, Test Accuracy = 0.84848
 |
 ```{r section_1.6, warning=FALSE, message=FALSE}
 ##################################
