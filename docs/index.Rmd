@@ -36,6 +36,9 @@ knitr::opts_chunk$set(echo = TRUE, fig.width=15, fig.height=10)
 |      **[B.2]** 127/128 predictors = All remaining variables (3/127 factor + 124/127 numeric)
 |     
 | 
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.1, warning=FALSE, message=FALSE}
 ##################################
 # Loading R libraries
@@ -132,6 +135,9 @@ PDA <- Alzheimer_Train
   row.names=NULL)
 )
 ```
+
+</details>
+
 ##  1.2 Data Quality Assessment
 |
 | Data quality assessment:
@@ -146,6 +152,10 @@ PDA <- Alzheimer_Train
 |
 | **[D]** No high skewness observed for any variable with Skewness>3 or Skewness<(-3).
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.2, warning=FALSE, message=FALSE}
 ##################################
 # Loading dataset
@@ -364,6 +374,9 @@ if (length(names(DQA.Predictors.Numeric))==0) {
 }
 
 ```
+
+</details>
+
 ##  1.3 Data Preprocessing
 
 ###  1.3.1 Outlier
@@ -378,6 +391,10 @@ if (length(names(DQA.Predictors.Numeric))==0) {
 |      **[A.5]** <span style="color: #FF0000">MCP_2</span> variable (21 outliers detected)
 |      **[A.6]** <span style="color: #FF0000">Prostatic_Acid_Phospatase</span> variable (10 outliers detected)
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.3.1, warning=FALSE, message=FALSE, fig.width=15, fig.height=3}
 ##################################
 # Loading dataset
@@ -430,6 +447,8 @@ dim(DPA.Predictors.Numeric)
 
 ```
 
+</details>
+
 ###  1.3.2 Zero and Near-Zero Variance
 |
 | Zero and near-zero variance data assessment:
@@ -438,6 +457,10 @@ dim(DPA.Predictors.Numeric)
 |
 | **[B]** No low variance noted for any variable using a preprocessing summary from the <mark style="background-color: #CCECFF">**caret**</mark> package. The <span style="color: #0000FF">nearZeroVar</span> method using both the <span style="color: #0000FF">freqCut</span> and <span style="color: #0000FF">uniqueCut</span> criteria set at 95/5 and 10, respectively, were applied on the dataset.
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.3.2, warning=FALSE, message=FALSE}
 ##################################
 # Loading dataset
@@ -499,12 +522,18 @@ if ((nrow(DPA_LowVariance[DPA_LowVariance$nzv,]))==0){
 
 ```
 
+</details>
+
 ###  1.3.3 Collinearity
 |
 | High collinearity data assessment:
 |
 | **[A]** No high correlation > 95% were noted for any variable pair as confirmed using the preprocessing summaries from the <mark style="background-color: #CCECFF">**caret**</mark> and <mark style="background-color: #CCECFF">**lares**</mark> packages.
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.3.3, warning=FALSE, message=FALSE}
 ##################################
 # Loading dataset
@@ -600,12 +629,18 @@ if (DPA_HighlyCorrelatedCount > 0) {
 
 ```
 
+</details>
+
 ###  1.3.4 Linear Dependencies
 |
 | Linear dependency data assessment:
 |
 | **[A]** No linear dependencies noted for any subset of variables using the preprocessing summary from the <mark style="background-color: #CCECFF">**caret**</mark> package applying the <span style="color: #0000FF">findLinearCombos</span> method which utilizes the QR decomposition of a matrix to enumerate sets of linear combinations (if they exist). 
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.3.4, warning=FALSE, message=FALSE}
 ##################################
 # Loading dataset
@@ -682,6 +717,8 @@ if (DPA_LinearlyDependentCount > 0) {
 
 ```
 
+</details>
+
 ###  1.3.5 Pre-Processed Dataset
 | Preliminary dataset assessment:
 |
@@ -702,6 +739,10 @@ if (DPA_LinearlyDependentCount > 0) {
 |      **[C.4]** No predictors removed due to high correlation
 |      **[C.5]** No predictors removed due to linear dependencies
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.3.7, warning=FALSE, message=FALSE}
 ##################################
 # Creating the pre-modelling
@@ -746,6 +787,8 @@ dim(PMA_PreModelling_Test)
 
 ```
 
+</details>
+
 ##  1.4 Data Exploration
 |
 | Exploratory data analysis:
@@ -776,6 +819,10 @@ dim(PMA_PreModelling_Test)
 |      **[B.1]** <span style="color: #FF0000">E2</span> variable (factor)
 |      **[B.2]** <span style="color: #FF0000">E4</span> variable (factor)
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.4, warning=FALSE, message=FALSE}
 ##################################
 # Loading dataset
@@ -853,6 +900,8 @@ EDA.Bar.Source.FactorVar.Prop <- rbind(EDA.PropTable.Function("E2"),
 
 ```
 
+</details>
+
 ##  1.5 Simulated Annealing (SA) and Genetic Algorithms (GA)
 
 ###  1.5.1 Random Forest Without SA and GA (RF_FULL)
@@ -878,6 +927,10 @@ EDA.Bar.Source.FactorVar.Prop <- rbind(EDA.PropTable.Function("E2"),
 | **[E]** The independent test model performance of the final model is summarized as follows:
 |      **[E.1]** Accuracy = 0.80303
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.1, warning=FALSE, message=FALSE}
 ##################################
 # Converting all predictors to numeric
@@ -982,6 +1035,8 @@ RF_FULL_Test
 
 ```
 
+</details>
+
 ###  1.5.2 Random Forest With Simulated Annealing (RF_SA)
 |
 | [Random Forest](https://link.springer.com/article/10.1023/A:1010933404324) is an ensemble learning method made up of a large set of small decision trees called estimators, with each producing its own prediction. The random forest model aggregates the predictions of the estimators to produce a more accurate prediction. The algorithm involves bootstrap aggregating (where smaller subsets of the training data are repeatedly subsampled with replacement), random subspacing (where a subset of features are sampled and used to train each individual estimator), estimator training (where unpruned decision trees are formulated for each estimator) and inference by aggregating the predictions of all estimators
@@ -1005,6 +1060,10 @@ RF_FULL_Test
 | **[E]** The independent test model performance of the final model is summarized as follows:
 |      **[E.1]** Accuracy = 0.77272
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.2, warning=FALSE, message=FALSE}
 ##################################
 # Formulating the controls for the
@@ -1064,6 +1123,8 @@ RF_SA_Test
 
 ```
 
+</details>
+
 ###  1.5.3 Random Forest With Genetic Algorithms (RF_GA)
 |
 | [Random Forest](https://link.springer.com/article/10.1023/A:1010933404324) is an ensemble learning method made up of a large set of small decision trees called estimators, with each producing its own prediction. The random forest model aggregates the predictions of the estimators to produce a more accurate prediction. The algorithm involves bootstrap aggregating (where smaller subsets of the training data are repeatedly subsampled with replacement), random subspacing (where a subset of features are sampled and used to train each individual estimator), estimator training (where unpruned decision trees are formulated for each estimator) and inference by aggregating the predictions of all estimators
@@ -1087,6 +1148,10 @@ RF_SA_Test
 | **[E]** The independent test model performance of the final model is summarized as follows:
 |      **[E.1]** Accuracy = 0.78787
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.3, warning=FALSE, message=FALSE}
 ##################################
 # Formulating the controls for the
@@ -1144,6 +1209,8 @@ RF_GA_Test
                                  y_true = RF_GA_Test$RF_GA_Observed))
 ```
 
+</details>
+
 ###  1.5.4 Linear Discriminant Analysis Without SA and GA (LDA_FULL)
 |
 | [Linear Discriminant Analysis](https://www.semanticscholar.org/paper/THE-USE-OF-MULTIPLE-MEASUREMENTS-IN-TAXONOMIC-Fisher/ab21376e43ac90a4eafd14f0f02a0c87502b6bbf) finds a linear combination of features that best separates the classes in a data set by projecting the data onto a lower-dimensional space that maximizes the separation between the classes. The algorithm searches for a set of linear discriminants that maximize the ratio of between-class variance to within-class variance by evaluating directions in the feature space that best separate the different classes of data. LDA assumes that the data has a Gaussian distribution and that the covariance matrices of the different classes are equal, in addition to the data being linearly separable by the presence of a linear decision boundary can accurately classify the different classes.
@@ -1161,6 +1228,10 @@ RF_GA_Test
 | **[E]** The independent test model performance of the final model is summarized as follows:
 |      **[E.1]** Accuracy = 0.75757
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.4, warning=FALSE, message=FALSE}
 ##################################
 # Converting all predictors to numeric
@@ -1249,6 +1320,8 @@ LDA_FULL_Test
 
 ```
 
+</details>
+
 ###  1.5.5 Linear Discriminant Analysis With Simulated Annealing (LDA_SA)
 |
 | [Linear Discriminant Analysis](https://www.semanticscholar.org/paper/THE-USE-OF-MULTIPLE-MEASUREMENTS-IN-TAXONOMIC-Fisher/ab21376e43ac90a4eafd14f0f02a0c87502b6bbf) finds a linear combination of features that best separates the classes in a data set by projecting the data onto a lower-dimensional space that maximizes the separation between the classes. The algorithm searches for a set of linear discriminants that maximize the ratio of between-class variance to within-class variance by evaluating directions in the feature space that best separate the different classes of data. LDA assumes that the data has a Gaussian distribution and that the covariance matrices of the different classes are equal, in addition to the data being linearly separable by the presence of a linear decision boundary can accurately classify the different classes.
@@ -1270,6 +1343,10 @@ LDA_FULL_Test
 | **[E]** The independent test model performance of the final model is summarized as follows:
 |      **[E.1]** Accuracy = 0.81818
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.5, warning=FALSE, message=FALSE}
 ##################################
 # Creating consistent fold assignments
@@ -1345,6 +1422,8 @@ LDA_SA_Test
 
 ```
 
+</details>
+
 ###  1.5.6 Linear Discriminant Analysis With Genetic Algorithms (LDA_GA)
 |
 | [Linear Discriminant Analysis](https://www.semanticscholar.org/paper/THE-USE-OF-MULTIPLE-MEASUREMENTS-IN-TAXONOMIC-Fisher/ab21376e43ac90a4eafd14f0f02a0c87502b6bbf) finds a linear combination of features that best separates the classes in a data set by projecting the data onto a lower-dimensional space that maximizes the separation between the classes. The algorithm searches for a set of linear discriminants that maximize the ratio of between-class variance to within-class variance by evaluating directions in the feature space that best separate the different classes of data. LDA assumes that the data has a Gaussian distribution and that the covariance matrices of the different classes are equal, in addition to the data being linearly separable by the presence of a linear decision boundary can accurately classify the different classes.
@@ -1366,6 +1445,10 @@ LDA_SA_Test
 | **[E]** The independent test model peLDAormance of the final model is summarized as follows:
 |      **[E.1]** Accuracy = 0.84848
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.6, warning=FALSE, message=FALSE}
 ##################################
 # Creating consistent fold assignments 
@@ -1441,6 +1524,8 @@ LDA_GA_Test
 
 ```
 
+</details>
+
 ##  1.6 Model Evaluation Summary
 |
 | Model performance comparison:
@@ -1467,6 +1552,10 @@ LDA_GA_Test
 |                      **[A.2.3.1]** Cross-Validation Accuracy = 0.79402
 |                      **[A.2.3.2]** Test Accuracy = 0.84848
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.6, warning=FALSE, message=FALSE}
 ##################################
 # Consolidating all evaluation results
@@ -1521,6 +1610,8 @@ print(Accuracy_Summary, row.names=FALSE)
                           cex = 2))
 
 ```
+
+</details>
 
 # **2. References**
 |
